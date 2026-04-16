@@ -24,7 +24,6 @@ h1{
   padding:15px;
 }
 
-/* INPUT */
 input{
   width:100%;
   padding:12px;
@@ -35,7 +34,6 @@ input{
   margin-top:15px;
 }
 
-/* BUTTON */
 button{
   width:100%;
   padding:12px;
@@ -50,7 +48,6 @@ button{
 
 button:active{transform:scale(0.95);}
 
-/* CARD */
 .card{
   margin-top:15px;
   border-radius:14px;
@@ -67,7 +64,7 @@ button:active{transform:scale(0.95);}
   line-height:1.5;
 }
 
-/* COPY BUTTON (FIXED) */
+/* COPY BUTTON */
 .copy{
   margin-top:10px;
   color:white;
@@ -84,7 +81,7 @@ button:active{transform:scale(0.95);}
   transform:scale(0.95);
 }
 
-/* MORE TOOLS */
+/* TOOL CARDS */
 .tool-card{
   background:linear-gradient(135deg,#1e293b,#0f172a);
   border:1px solid #334155;
@@ -112,13 +109,13 @@ button:active{transform:scale(0.95);}
 }
 </style></head><body><h1>📝 Description Generator</h1><div class="container"><input type="text" id="keyword" placeholder="Enter keyword"><button onclick="start()">Generate Description</button>
 
-<div id="result"></div><!-- MORE TOOLS --><div class="tool-card" onclick="goLink()">
+<div id="result"></div><!-- 🔥 LOOP TOOLS --><div onclick="goTitle()" class="tool-card">
 <div>
 <div class="tool-title">📺 Title Generator</div>
 <div class="tool-sub">Create catchy titles</div>
 </div>
 <div>→</div>
-</div><div class="tool-card" onclick="goLink()">
+</div><div onclick="goTag()" class="tool-card">
 <div>
 <div class="tool-title">🏷️ Hashtag Generator</div>
 <div class="tool-sub">Generate viral tags</div>
@@ -177,8 +174,13 @@ setTimeout(()=>{
 },1000);
 }
 
-function goLink(){
-window.open("https://wa.me/","_blank");
+/* 🔥 FIXED LINKS */
+function goTitle(){
+window.location.href="https://sohamwebstudio-pro.github.io/Tools-hub/title.html";
+}
+
+function goTag(){
+window.location.href="https://sohamwebstudio-pro.github.io/Tools-hub/tag.html";
 }
 
 </script></body>
