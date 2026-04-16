@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Compressor Pro</title><style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0f172a;
+  color:white;
+  text-align:center;
+}
+
+/* HEADER */
+h1{
+  color:#38bdf8;
+  margin-top:20px;
+}
+
+/* CONTAINER */
+.container{
+  max-width:420px;
+  margin:auto;
+  padding:15px;
+}
+
+/* UPLOAD */
+.upload-box{
+  border:2px dashed #38bdf8;
+  padding:25px;
+  border-radius:12px;
+  cursor:pointer;
+  color:#94a3b8;
+  transition:0.2s;
+}
+
+.upload-box:active{
+  transform:scale(0.97);
+}
+
+/* PREVIEW CARD */
+.preview{
+  margin-top:15px;
+  background:#1e293b;
+  padding:10px;
+  border-radius:12px;
+  display:none;
+}
+
+.preview img{
+  width:100%;
+  max-height:180px;
+  object-fit:contain;
+  border-radius:10px;
+}
+
+.info{
+  font-size:13px;
+  color:#94a3b8;
+  margin-top:5px;
+}
+
+/* INPUT */
+input,select{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border-radius:8px;
+  border:none;
+  background:#1e293b;
+  color:white;
+}
+
+/* RANGE */
+input[type=range]{
+  width:100%;
+}
+
+/* BUTTON */
+button{
+  width:100%;
+  padding:12px;
+  margin-top:15px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(90deg,#38bdf8,#22c55e);
+  color:black;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+button:active{
+  transform:scale(0.94);
+}
+
+/* PROGRESS */
+.progress{
+  margin-top:15px;
+  display:none;
+}
+
+.bar-bg{
+  width:100%;
+  height:8px;
+  background:#1e293b;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.bar{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#38bdf8,#22c55e);
+}
+
+.percent{
+  font-size:13px;
+  margin-top:5px;
+}
+</style></head><body><h1>🖼️ Image Compressor</h1><div class="container"><div class="upload-box" onclick="fileInput.click()">
+Drag & Drop or Click
+</div><input type="file" id="fileInput" hidden><div class="preview" id="preview">
+<img id="img">
+<div class="info" id="info"></div>
+</div><label>Quality</label>
+<input type="range" id="quality" min="0.1" max="1" step="0.1" value="0.6">
+
+<label>Format</label>
+<select id="format">
+
+<option value="image/jpeg">JPG</option>
+<option value="image/webp">WEBP</option>
+<option value="image/png">PNG</option>
+</select><input type="text" id="name" placeholder="File name (optional)"><div class="progress" id="progress">
+<div class="bar-bg"><div class="bar" id="bar"></div></div>
+<div class="percent" id="percent">0%</div>
+</div><button onclick="start()">Compress</button>
+
+</div><script>
+let img, originalSize;
+
+fileInput.onchange=e=>{
+let file=e.target.files[0];
+if(!file)return;
+
+originalSize=(file.size/1024).toFixed(2);
+
+let reader=new FileReader();
+reader.onload=ev=>{
+img=new Image();
+img.src=ev.target.result;
+
+document.getElementById("img").src=ev.target.result;
+preview.style.display="block";
+info.innerText="Original: "+originalSize+" KB";
+}
+reader.readAsDataURL(file);
+}
+
+function start(){
+if(!img)return alert("Upload image first!");
+
+progress.style.display="block";
+
+let p=0;
+let i=setInterval(()=>{
+p+=5;
+bar.style.width=p+"%";
+percent.innerText=p+"%";
+
+if(p>=100){
+clearInterval(i);
+compress();
+}
+},100);
+}
+
+function compress(){
+let canvas=document.createElement("canvas");
+let ctx=canvas.getContext("2d");
+
+canvas.width=img.width;
+canvas.height=img.height;
+
+ctx.drawImage(img,0,0);
+
+let q=document.getElementById("quality").value;
+let f=document.getElementById("format").value;
+
+let data=canvas.toDataURL(f,q);
+
+let newSize=(data.length/1024).toFixed(2);
+info.innerText+=" | Compressed: "+newSize+" KB";
+
+let name=document.getElementById("name").value||"compressed";
+
+let a=document.createElement("a");
+a.href=data;
+a.download=name;
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+}
+</script></body>
+</html>
