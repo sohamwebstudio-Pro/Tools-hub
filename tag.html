@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hashtag Generator</title><style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0f172a;
+  color:white;
+  text-align:center;
+}
+
+h1{
+  margin-top:20px;
+  color:#38bdf8;
+}
+
+/* CONTAINER */
+.container{
+  max-width:420px;
+  margin:auto;
+  padding:15px;
+}
+
+/* INPUT */
+input{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  background:#1e293b;
+  color:white;
+  margin-top:15px;
+}
+
+/* BUTTON */
+button{
+  width:100%;
+  padding:12px;
+  margin-top:15px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(90deg,#38bdf8,#22c55e);
+  color:black;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:active{transform:scale(0.95);}
+
+/* CARD */
+.card{
+  margin-top:15px;
+  border-radius:14px;
+  padding:2px;
+  background:linear-gradient(135deg,#38bdf8,#22c55e);
+}
+
+.inner{
+  background:#1e293b;
+  border-radius:12px;
+  padding:10px;
+  text-align:left;
+}
+
+/* TAG */
+.tag{
+  display:inline-block;
+  margin:5px;
+  padding:8px 10px;
+  border-radius:8px;
+  background:#334155;
+  font-size:13px;
+  cursor:pointer;
+}
+
+.tag:active{
+  background:#22c55e;
+  color:black;
+}
+
+/* COPY ALL */
+.copy-all{
+  margin-top:10px;
+  text-align:center;
+  font-size:13px;
+  color:#22c55e;
+  cursor:pointer;
+}
+
+/* MORE TOOLS */
+.tool-card{
+  background:linear-gradient(135deg,#1e293b,#0f172a);
+  border:1px solid #334155;
+  padding:18px;
+  border-radius:14px;
+  margin-top:12px;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.tool-card:active{
+  transform:scale(0.96);
+  background:#334155;
+}
+
+.tool-title{
+  font-size:14px;
+}
+
+.tool-sub{
+  font-size:11px;
+  color:#94a3b8;
+}
+</style></head><body><h1># Hashtag Generator</h1><div class="container"><input type="text" id="keyword" placeholder="Enter keyword"><button onclick="start()">Generate Hashtags</button>
+
+<div id="result"></div><!-- MORE TOOLS --><div class="tool-card" onclick="goLink()">
+<div>
+<div class="tool-title">📺 Title Generator</div>
+<div class="tool-sub">Create catchy titles</div>
+</div>
+<div>→</div>
+</div><div class="tool-card" onclick="goLink()">
+<div>
+<div class="tool-title">📝 Description Generator</div>
+<div class="tool-sub">Write SEO descriptions</div>
+</div>
+<div>→</div>
+</div></div><script>
+
+function start(){
+let k=keyword.value.trim();
+if(!k)return alert("Enter keyword!");
+
+result.innerHTML="⏳ Generating...";
+
+setTimeout(()=>{
+generate(k);
+},800);
+}
+
+function generate(k){
+
+let base = k.replace(/\s+/g,'');
+
+let tags=[
+"#"+base,
+"#"+base+"tips",
+"#"+base+"2025",
+"#learn"+base,
+"#best"+base,
+"#"+base+"hacks",
+"#"+base+"guide",
+"#"+base+"tricks",
+"#viral"+base,
+"#"+base+"content",
+"#grow"+base,
+"#"+base+"reels",
+"#"+base+"video"
+];
+
+// random 10
+let shuffled = tags.sort(()=>0.5-Math.random()).slice(0,10);
+
+let html='<div class="card"><div class="inner">';
+
+shuffled.forEach(t=>{
+html+=`<span class="tag" onclick="copyTag('${t}')">${t}</span>`;
+});
+
+html+=`<div class="copy-all" onclick="copyAll()">Copy All</div>`;
+
+html+='</div></div>';
+
+result.innerHTML=html;
+}
+
+function copyTag(t){
+navigator.clipboard.writeText(t);
+}
+
+function copyAll(){
+let tags=document.querySelectorAll(".tag");
+let text="";
+tags.forEach(t=>text+=t.innerText+" ");
+navigator.clipboard.writeText(text);
+}
+
+function goLink(){
+window.open("https://wa.me/","_blank");
+}
+
+</script></body>
+</html>
