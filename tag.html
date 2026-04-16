@@ -18,14 +18,12 @@ h1{
   color:#38bdf8;
 }
 
-/* CONTAINER */
 .container{
   max-width:420px;
   margin:auto;
   padding:15px;
 }
 
-/* INPUT */
 input{
   width:100%;
   padding:12px;
@@ -36,7 +34,6 @@ input{
   margin-top:15px;
 }
 
-/* BUTTON */
 button{
   width:100%;
   padding:12px;
@@ -51,7 +48,6 @@ button{
 
 button:active{transform:scale(0.95);}
 
-/* CARD */
 .card{
   margin-top:15px;
   border-radius:14px;
@@ -66,7 +62,6 @@ button:active{transform:scale(0.95);}
   text-align:left;
 }
 
-/* TAG */
 .tag{
   display:inline-block;
   margin:5px;
@@ -82,7 +77,6 @@ button:active{transform:scale(0.95);}
   color:black;
 }
 
-/* COPY ALL */
 .copy-all{
   margin-top:10px;
   text-align:center;
@@ -91,7 +85,7 @@ button:active{transform:scale(0.95);}
   cursor:pointer;
 }
 
-/* MORE TOOLS */
+/* TOOL CARDS */
 .tool-card{
   background:linear-gradient(135deg,#1e293b,#0f172a);
   border:1px solid #334155;
@@ -119,13 +113,13 @@ button:active{transform:scale(0.95);}
 }
 </style></head><body><h1># Hashtag Generator</h1><div class="container"><input type="text" id="keyword" placeholder="Enter keyword"><button onclick="start()">Generate Hashtags</button>
 
-<div id="result"></div><!-- MORE TOOLS --><div class="tool-card" onclick="goLink()">
+<div id="result"></div><!-- 🔥 LOOP TOOLS --><div onclick="goTitle()" class="tool-card">
 <div>
 <div class="tool-title">📺 Title Generator</div>
 <div class="tool-sub">Create catchy titles</div>
 </div>
 <div>→</div>
-</div><div class="tool-card" onclick="goLink()">
+</div><div onclick="goDesc()" class="tool-card">
 <div>
 <div class="tool-title">📝 Description Generator</div>
 <div class="tool-sub">Write SEO descriptions</div>
@@ -134,7 +128,7 @@ button:active{transform:scale(0.95);}
 </div></div><script>
 
 function start(){
-let k=keyword.value.trim();
+let k=document.getElementById("keyword").value.trim();
 if(!k)return alert("Enter keyword!");
 
 result.innerHTML="⏳ Generating...";
@@ -164,7 +158,6 @@ let tags=[
 "#"+base+"video"
 ];
 
-// random 10
 let shuffled = tags.sort(()=>0.5-Math.random()).slice(0,10);
 
 let html='<div class="card"><div class="inner">';
@@ -191,8 +184,13 @@ tags.forEach(t=>text+=t.innerText+" ");
 navigator.clipboard.writeText(text);
 }
 
-function goLink(){
-window.open("https://wa.me/","_blank");
+/* 🔥 FIXED LINKS */
+function goTitle(){
+window.location.href="https://sohamwebstudio-pro.github.io/Tools-hub/title.html";
+}
+
+function goDesc(){
+window.location.href="https://sohamwebstudio-pro.github.io/Tools-hub/description.html";
 }
 
 </script></body>
