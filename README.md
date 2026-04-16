@@ -27,12 +27,6 @@ This website is built using HTML, CSS, and JavaScript and hosted on GitHub Pages
 
 ---
 
-🌐 Live Website
-
-👉 https://yourusername.github.io/toolshub/
-
----
-
 ⚙️ Tech Used
 
 - HTML
