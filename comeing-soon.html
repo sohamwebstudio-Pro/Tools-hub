@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coming Soon - ToolsHub</title><style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0f172a;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  text-align:center;
+}
+
+/* CARD */
+.card{
+  background:#1e293b;
+  padding:30px;
+  border-radius:15px;
+  max-width:320px;
+}
+
+/* ICON */
+.icon{
+  font-size:50px;
+}
+
+/* TITLE */
+h2{
+  margin-top:10px;
+  color:#38bdf8;
+}
+
+/* TEXT */
+p{
+  color:#94a3b8;
+  font-size:14px;
+}
+
+/* BUTTON */
+button{
+  margin-top:15px;
+  padding:10px 20px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(90deg,#38bdf8,#22c55e);
+  color:black;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:active{
+  transform:scale(0.95);
+}
+</style></head><body><div class="card"><div class="icon">🚧</div><h2>Coming Soon</h2><p>This tool is under development.<br>
+Stay tuned for updates!</p><button onclick="goHome()">⬅ Back to Home</button>
+
+</div><script>
+function goHome(){
+  window.location.href="../index.html";
+}
+</script></body>
+</html>
