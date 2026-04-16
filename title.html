@@ -18,14 +18,12 @@ h1{
   color:#38bdf8;
 }
 
-/* CONTAINER */
 .container{
   max-width:420px;
   margin:auto;
   padding:15px;
 }
 
-/* INPUT */
 input{
   width:100%;
   padding:12px;
@@ -36,7 +34,6 @@ input{
   margin-top:15px;
 }
 
-/* BUTTON */
 button{
   width:100%;
   padding:12px;
@@ -51,7 +48,6 @@ button{
 
 button:active{transform:scale(0.95);}
 
-/* RESULT CARD */
 .card{
   margin-top:15px;
   border-radius:14px;
@@ -65,7 +61,6 @@ button:active{transform:scale(0.95);}
   overflow:hidden;
 }
 
-/* ITEM */
 .item{
   padding:14px;
   border-bottom:1px solid #334155;
@@ -80,26 +75,22 @@ button:active{transform:scale(0.95);}
   background:#334155;
 }
 
-/* TEXT */
 .text{
   flex:1;
   text-align:left;
   font-size:14px;
 }
 
-/* COPY */
 .copy{
   color:#22c55e;
   font-size:12px;
 }
 
-/* MORE TOOLS */
 .more{
   margin-top:25px;
   text-align:left;
 }
 
-/* PREMIUM TOOL CARDS */
 .tool-card{
   background:linear-gradient(135deg,#1e293b,#0f172a);
   border:1px solid #334155;
@@ -128,13 +119,13 @@ button:active{transform:scale(0.95);}
 }
 </style></head><body><h1>📺 Title Generator</h1><div class="container"><input type="text" id="keyword" placeholder="Enter keyword"><button onclick="start()">Generate Titles</button>
 
-<div id="result"></div><!-- MORE TOOLS --><div class="more"><div class="tool-card" onclick="goLink()">
+<div id="result"></div><!-- MORE TOOLS --><div class="more"><div onclick="goTag()" class="tool-card">
 <div>
 <div class="tool-title">🏷️ Hashtag Generator</div>
 <div class="tool-sub">Generate viral tags</div>
 </div>
 <div>→</div>
-</div><div class="tool-card" onclick="goLink()">
+</div><div onclick="goDesc()" class="tool-card">
 <div>
 <div class="tool-title">📝 Description Generator</div>
 <div class="tool-sub">Write SEO descriptions</div>
@@ -143,7 +134,7 @@ button:active{transform:scale(0.95);}
 </div></div></div><script>
 
 function start(){
-let k=keyword.value.trim();
+let k=document.getElementById("keyword").value.trim();
 if(!k)return alert("Enter keyword!");
 
 result.innerHTML="⏳ Generating...";
@@ -168,7 +159,6 @@ k+" Strategy That Works in 2025",
 k+" Explained in Simple Way"
 ];
 
-// RANDOM PICK (different each time)
 let shuffled = patterns.sort(()=>0.5 - Math.random()).slice(0,6);
 
 let html='<div class="card"><div class="inner">';
@@ -194,8 +184,13 @@ el.querySelector(".copy").innerText="Copy";
 },1000);
 }
 
-function goLink(){
-window.open("https://wa.me/", "_blank");
+/* 🔥 FIXED LINKS */
+function goTag(){
+window.location.href="https://sohamwebstudio-pro.github.io/Tools-hub/tag.html";
+}
+
+function goDesc(){
+window.location.href="https://sohamwebstudio-pro.github.io/Tools-hub/description.html";
 }
 
 </script></body>
