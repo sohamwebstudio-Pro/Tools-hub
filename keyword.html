@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keyword Generator Pro</title><!-- Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-MZF0VV7PZG"></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MZF0VV7PZG');
+</script><style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+body{margin:0;font-family:Arial;background:#0f172a;color:white;text-align:center;}
+h1{color:#38bdf8;margin-top:20px;}
+
+.container{max-width:420px;margin:auto;padding:15px;}
+
+input{
+width:100%;padding:12px;border:none;border-radius:12px;
+background:#1e293b;color:white;margin-top:15px;
+}
+
+button{
+width:100%;padding:12px;margin-top:15px;border:none;
+border-radius:12px;background:linear-gradient(90deg,#38bdf8,#22c55e);
+color:black;font-weight:bold;cursor:pointer;
+}
+
+.loading{
+margin-top:15px;font-size:14px;color:#94a3b8;
+display:none;
+}
+
+.card{
+margin-top:15px;border-radius:14px;padding:2px;
+background:linear-gradient(135deg,#38bdf8,#22c55e);
+}
+
+.inner{
+background:#1e293b;border-radius:12px;overflow:hidden;
+}
+
+.section{
+padding:10px;
+border-bottom:1px solid #334155;
+text-align:left;
+}
+
+.section-title{
+font-size:12px;color:#94a3b8;margin-bottom:5px;
+}
+
+.item{
+padding:8px 0;display:flex;justify-content:space-between;
+font-size:14px;cursor:pointer;
+}
+
+.copy{color:#22c55e;font-size:12px;}
+
+.copy-all{
+margin-top:10px;text-align:center;font-size:13px;
+color:#22c55e;cursor:pointer;
+}
+</style></head><body><h1>🔍 Keyword Generator Pro</h1><div class="container"><input type="text" id="keyword" placeholder="Enter keyword"><button onclick="start()">Generate Keywords</button>
+
+<div class="loading" id="loading">⏳ Analyzing keywords...</div><div id="result"></div></div><script>
+
+function start(){
+let k=keyword.value.trim();
+if(!k)return alert("Enter keyword!");
+
+loading.style.display="block";
+result.innerHTML="";
+
+setTimeout(()=>{
+generate(k);
+loading.style.display="none";
+},1200);
+}
+
+function generate(k){
+
+let seo=[
+k,
+"best "+k,
+k+" guide",
+k+" tutorial",
+"learn "+k,
+k+" explained"
+];
+
+let youtube=[
+k+" tips",
+k+" for beginners",
+k+" 2025",
+k+" hacks",
+k+" tricks",
+k+" strategy"
+];
+
+let longtail=[
+"how to "+k,
+"how to start "+k,
+k+" step by step",
+k+" full course",
+k+" for beginners 2025",
+"best way to "+k
+];
+
+function renderSection(title,list){
+let html=`<div class="section">
+<div class="section-title">${title}</div>`;
+list.forEach(t=>{
+html+=`
+<div class="item" onclick="copy(this)">
+<span>${t}</span>
+<span class="copy">Copy</span>
+</div>`;
+});
+html+=`</div>`;
+return html;
+}
+
+let html='<div class="card"><div class="inner">';
+html+=renderSection("SEO Keywords",seo);
+html+=renderSection("YouTube Keywords",youtube);
+html+=renderSection("Long Tail Keywords",longtail);
+html+=`<div class="copy-all" onclick="copyAll()">Copy All</div>`;
+html+='</div></div>';
+
+result.innerHTML=html;
+}
+
+function copy(el){
+let text=el.innerText.replace("Copy","");
+navigator.clipboard.writeText(text);
+
+el.querySelector(".copy").innerText="✓";
+setTimeout(()=>{
+el.querySelector(".copy").innerText="Copy";
+},1000);
+}
+
+function copyAll(){
+let items=document.querySelectorAll(".item span:first-child");
+let text="";
+items.forEach(i=>text+=i.innerText+", ");
+navigator.clipboard.writeText(text);
+}
+
+</script></body>
+</html>
