@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sohamwebstudio-pro.github.io/Tools-hub/sitemap.xml
