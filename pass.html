@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Password Generator</title><!-- Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-MZF0VV7PZG"></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MZF0VV7PZG');
+</script><style>
+body{margin:0;font-family:Arial;background:#0f172a;color:white;text-align:center;}
+.container{max-width:420px;margin:auto;padding:15px;}
+h1{color:#38bdf8;}
+
+input,button{
+width:100%;padding:12px;margin-top:10px;
+border:none;border-radius:10px;
+}
+
+input{background:#1e293b;color:white;}
+button{background:linear-gradient(90deg,#38bdf8,#22c55e);color:black;font-weight:bold;}
+
+.output{
+margin-top:15px;background:#1e293b;
+padding:12px;border-radius:10px;
+word-break:break-all;
+}
+
+.copy{margin-top:10px;color:#22c55e;cursor:pointer;}
+.strength{margin-top:8px;font-size:13px;}
+</style></head><body><h1>🔐 Smart Password Generator</h1><div class="container"><input type="text" id="hint" placeholder="Enter hint (name, word etc)"><button onclick="generate()">Generate Secure Password</button>
+
+<div class="output" id="output">Password will appear here</div>
+<div class="copy" onclick="copy()">Copy</div><div class="strength" id="strength"></div></div><script>
+
+function generate(){
+
+let hint=document.getElementById("hint").value.trim();
+
+let upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let lower="abcdefghijklmnopqrstuvwxyz";
+let num="0123456789";
+let sym="!@#$%^&*";
+
+let all=upper+lower+num+sym;
+
+let random="";
+for(let i=0;i<8;i++){
+random+=all[Math.floor(Math.random()*all.length)];
+}
+
+// mix hint
+let final = "";
+
+if(hint){
+hint = hint.charAt(0).toUpperCase() + hint.slice(1);
+final = hint + random;
+}else{
+final = random + random;
+}
+
+output.innerText=final;
+check(final);
+}
+
+function copy(){
+navigator.clipboard.writeText(output.innerText);
+}
+
+function check(p){
+let strength="Weak ❌";
+
+if(p.length>=10 && /[A-Z]/.test(p) && /[0-9]/.test(p)){
+strength="Medium ⚠️";
+}
+if(p.length>=14 && /[A-Z]/.test(p) && /[0-9]/.test(p) && /[!@#$]/.test(p)){
+strength="Strong 🔥";
+}
+
+strengthEl=document.getElementById("strength");
+strengthEl.innerText="Strength: "+strength;
+}
+
+</script></body>
+</html>
