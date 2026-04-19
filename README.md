@@ -1,69 +1,50 @@
-⚡ ToolsHub
+# 🔥 ToolsHub - Free Tag Generator Tools
 
-Free Online Tools for Creators & Students
+Welcome to **ToolsHub**, a collection of free online tools specially focused on **Tag & Hashtag Generators** for creators.
 
----
+## 🚀 Features
 
-🚀 About
+- 🎯 YouTube Tag Generator  
+- 📸 Instagram Hashtag Generator  
+- 📘 Facebook Tag Generator  
+- 📌 Pinterest Tag Generator  
+- 🐦 Twitter Hashtag Generator  
 
-ToolsHub is a collection of simple, fast, and useful online tools designed to help creators, students, and developers.
+## 💡 Why Use ToolsHub?
 
-This website is built using HTML, CSS, and JavaScript and hosted on GitHub Pages.
+- 100% Free  
+- No Signup Required  
+- Instant Results  
+- Simple & Fast UI  
 
----
+## 🌐 Live Website
 
-🛠️ Available Tools
+👉 https://sohamwebstudio-pro.github.io/Tools-hub/
 
-- AI Thumbnail Maker (Coming Soon)
-- Keyword Generator (Coming Soon)
-- YouTube Title Generator
-- Image Compressor
-- Background Remover (Coming Soon)
-- Instagram Bio Generator (Coming Soon)
-- Resume Builder (Coming Soon)
-- Word Counter (Coming Soon)
-- Password Generator (Coming Soon)
-- QR Code Generator (Coming Soon)
+## 📂 Pages
 
----
+- `/youtube-tags.html`
+- `/instagram-tags.html`
+- `/facebook-tags.html`
+- `/pinterest-tags.html`
+- `/twitter-tags.html`
 
-⚙️ Tech Used
+## 🛠️ Tech Used
 
-- HTML
-- CSS
-- JavaScript
-- GitHub Pages
+- HTML  
+- CSS  
+- JavaScript  
 
----
+## 🎯 Goal
 
-📌 Features
+To provide simple, fast and free tools for content creators to grow on platforms like YouTube, Instagram and more.
 
-- Clean and simple UI
-- Mobile-friendly design
-- Fast loading
-- Easy to use tools
+## 📢 Future Plans
 
----
-
-🔄 Future Plans
-
-- Add more tools
-- Improve UI/UX
-- Add SEO optimization
-- Add more advanced features
+- More tag tools  
+- AI-based keyword suggestions  
+- SEO optimization tools  
 
 ---
 
-🤝 Contributing
-
-This is a personal project, but suggestions are always welcome!
-
----
-
-📧 Contact
-
-For any suggestions or feedback, feel free to reach out.
-
----
-
-⭐ If you like this project, consider giving it a star!
+⭐ If you like this project, feel free to share and support!
