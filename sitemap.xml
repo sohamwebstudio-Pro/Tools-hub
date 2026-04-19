@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url><loc>https://sohamwebstudio-pro.github.io/Tools-hub/</loc></url>
-<url><loc>https://sohamwebstudio-pro.github.io/Tools-hub/title.html</loc></url>
-<url><loc>https://sohamwebstudio-pro.github.io/Tools-hub/tag.html</loc></url>
-<url><loc>https://sohamwebstudio-pro.github.io/Tools-hub/description.html</loc></url>
-<url><loc>https://sohamwebstudio-pro.github.io/Tools-hub/keyword.html</loc></url>
-<url><loc>https://sohamwebstudio-pro.github.io/Tools-hub/bio.html</loc></url>
-<url><loc>https://sohamwebstudio-pro.github.io/Tools-hub/pass.html</loc></url>
-<url><loc>https://sohamwebstudio-pro.github.io/Tools-hub/qrcode.html</loc></url>
-<url><loc>https://sohamwebstudio-pro.github.io/Tools-hub/wordcount.html</loc></url>
-<url><loc>https://sohamwebstudio-pro.github.io/Tools-hub/Composer.html</loc></url>
+<url>
+  <loc>https://sohamwebstudio-pro.github.io/Tools-hub/</loc>
+</url>
+
+<url>
+  <loc>https://sohamwebstudio-pro.github.io/Tools-hub/youtube-tags.html</loc>
+</url>
+
+<url>
+  <loc>https://sohamwebstudio-pro.github.io/Tools-hub/instagram-tags.html</loc>
+</url>
+
+<url>
+  <loc>https://sohamwebstudio-pro.github.io/Tools-hub/facebook-tags.html</loc>
+</url>
+
+<url>
+  <loc>https://sohamwebstudio-pro.github.io/Tools-hub/pinterest-tags.html</loc>
+</url>
+
+<url>
+  <loc>https://sohamwebstudio-pro.github.io/Tools-hub/twitter-tags.html</loc>
+</url>
 
 </urlset>
