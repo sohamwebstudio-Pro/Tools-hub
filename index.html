@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tag Generator Tool</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #0b0b0b;
+  color: white;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 15px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+.subtitle {
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+/* Instruction */
+.guide {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px,1fr));
+  gap: 14px;
+}
+
+/* Card */
+.card {
+  background: #111;
+  padding: 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  border: 1px solid #222;
+  transition: 0.25s;
+  position: relative;
+}
+
+/* Hover */
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #333;
+}
+
+/* Logo */
+.logo {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 8px;
+}
+
+/* Text */
+.card h3 {
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.card p {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Open hint */
+.open {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  font-size: 14px;
+  color: #888;
+}
+
+/* Footer */
+.footer {
+  margin-top: 30px;
+  border-top: 1px solid #222;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.footer .links {
+  margin-bottom: 8px;
+}
+
+.footer a {
+  color: #888;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 13px;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+.footer .bottom {
+  font-size: 12px;
+  color: #555;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Tag Generator ⚡</h1>
+<p class="subtitle">Generate tags for all platforms</p>
+<p class="guide">👉 Tap any tool to start</p>
+
+<div class="grid">
+
+<div class="card" onclick="go('youtube.html')">
+  <img src="https://cdn.simpleicons.org/youtube/FF0000" class="logo"
+       onerror="this.src='https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/youtube.svg'">
+  <h3>YouTube</h3>
+  <p>Video tags</p>
+  <span class="open">➜</span>
+</div>
+
+<div class="card" onclick="go('instagram.html')">
+  <img src="https://cdn.simpleicons.org/instagram/E4405F" class="logo"
+       onerror="this.src='https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg'">
+  <h3>Instagram</h3>
+  <p>Hashtags</p>
+  <span class="open">➜</span>
+</div>
+
+<div class="card" onclick="go('facebook.html')">
+  <img src="https://cdn.simpleicons.org/facebook/1877F2" class="logo"
+       onerror="this.src='https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/facebook.svg'">
+  <h3>Facebook</h3>
+  <p>Post tags</p>
+  <span class="open">➜</span>
+</div>
+
+<div class="card" onclick="go('pinterest.html')">
+  <img src="https://cdn.simpleicons.org/pinterest/BD081C" class="logo"
+       onerror="this.src='https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/pinterest.svg'">
+  <h3>Pinterest</h3>
+  <p>Keywords</p>
+  <span class="open">➜</span>
+</div>
+
+<div class="card" onclick="go('twitter.html')">
+  <img src="https://cdn.simpleicons.org/x/ffffff" class="logo"
+       onerror="this.src='https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/twitter.svg'">
+  <h3>X (Twitter)</h3>
+  <p>Trending tags</p>
+  <span class="open">➜</span>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="bottom">
+    Free • Fast • No Login <br>
+    Made with ❤️ by Soham
+  </div>
+</div>
+
+</div>
+
+<script>
+function go(page){
+  window.location.href = page;
+}
+</script>
+
+</body>
+</html>
